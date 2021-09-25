@@ -1,0 +1,232 @@
+E.///////////////////////
+n = int(input())
+for i in range(n):
+    arr= []
+    arr = list(map(int, input().split(" ")))
+    arr.sort()
+    ans = arr[0]*arr[2]
+    print(ans)
+c./////////////////////
+import sys
+import heapq
+input=sys.stdin.readline
+narr=[]
+custom = []
+cus = []
+out = []
+heap=[]
+max=0
+c=int(input())
+i=0
+num = 0
+while i < c:
+    narr = list(map(int, input().split()))
+    if (narr[0]==1):
+        custom.append(num)
+        custom.append(narr[1])
+        cus.append(narr[1])
+        num+=1
+    elif (narr[0]==2):
+        out.append(custom[0]+1)
+        del(custom[0:2])
+        del(cus[0])
+    else:
+        for item in cus:
+            heapq.heappush(heap,item)
+        while heap:
+            max=heapq.heappop(heap)*(1)
+        ind=cus.index(max)
+        out.append(custom[ind*2]+1)
+        del(custom[(ind*2):(ind*2)+2])
+        del(cus[ind])
+    i+=1
+for i in out:
+    print(i,end='')
+    print(" ", end='')
+
+////
+i=0
+j=0
+c=int(input())
+com=[]
+x=0
+y=0
+while i < c:
+    com=str(input())
+    while j<len(com)
+        if (narr[0]==1):
+        custom.append(num)
+        custom.append(narr[1])
+        cus.append(narr[1])
+        num+=1
+    elif (narr[0]==2):
+        out.append(custom[0]+1)
+        del(custom[0:2])
+        del(cus[0])
+    else:
+        for item in cus:
+            heapq.heappush(heap,item)
+        while heap:
+            max=heapq.heappop(heap)*(1)
+        ind=cus.index(max)
+        out.append(custom[ind*2]+1)
+        del(custom[(ind*2):(ind*2)+2])
+        del(cus[ind])
+    i+=1
+for i in out:
+    print(i,end='')
+    print(" ", end='')
+
+////////
+import sys
+input=sys.stdin.readline
+
+def getpw():
+    return str(input())
+
+def query(x):
+    print("? " + str(x))
+    sys.stdout.flush()
+    return int(input())
+
+def guess(x):
+    print("= " + str(x))
+    sys.stdout.flush()
+pw=[]
+n = getpw()
+
+left = 1
+right = n
+
+while left < right:
+    mid = (left + right) // 2
+    res = query(mid)
+    if res < 0:
+        left = mid + 1
+    elif res > 0:
+        right = mid - 1
+    else:
+        left = right = mid
+guess(left)
+///1070_A
+import sys
+input=sys.stdin.readline
+
+
+def solution(n):
+    N=[int(i) for i in str(n)]
+    return sum(N)
+def recur_dp(m):
+    if m<len(multin):
+        return multin[m]
+    else:
+        multi=multin[1]*m
+        multin.append(multi)
+        return multi
+
+
+d, s = map(int, input().split())
+multin=[]
+multin.append(0)
+multin.append(d)
+
+n=(s//9)
+m=s%9-1
+min=0
+for i in range(n):
+    min+=(9*(10**i))
+min+=(m*(10**n))
+start=min//d
+start+=1
+value=str(recur_dp(start))
+
+while (solution(recur_dp(start))!=s):
+    start += 1
+print(recur_dp(start))
+/////// file name
+import sys
+input=sys.stdin.readline
+
+name=[]
+que=[]
+findstr=0
+fn=""
+last=""
+found=""
+
+filen=int(input())
+for i in range(filen):
+    fn=str(input())
+    name.append(fn)
+
+qn=int(input())
+for j in range(qn):
+    fn=str(input())
+    que.append(fn)
+    que[j].rstrip()
+print(name)
+print(que)
+"""
+    findstr = 0
+    l = 0
+    for k in range(filen):
+        last=name[k]
+        findstr=last.find(fn)
+        if findstr!=-1:
+            l+=1
+            found=last
+        else:
+             pass
+    print(k,found)
+"""
+//////c
+import sys
+input=sys.stdin.readline
+
+w,N= map(int, input().split())
+count1=0
+count2=0
+
+k=0
+width=list(map(int,input().split()))
+height=list(map(int,input().split()))
+for i in width:
+    width[count1]=1-(i%2)
+    count1+=1
+for j in height:
+    height[count2]=1-(j%2)
+    count2+=1
+print(width)
+print(height)
+while k<N:
+    if(sum(width)*sum(height)==(0 or N**2)):
+        print("YES")
+    else:
+        pass
+    a,b,c,d = map(int, input().split())
+    if a>c:
+        tmp=c
+        c=a
+        a=tmp
+    else:
+        pass
+    if b>d:
+        tmp=b
+        b=d
+        d=tmp
+    else:
+        pass
+    print(a,b,c,d)
+    even = 0
+
+    for p in range(a,c):
+        for l in range(b,d):
+            if width[l-1]==height[p-1]:
+                even+=1
+            else:
+                pass
+    if even>=((c-a)+(d-b)+1):
+        print("YES")
+    else:
+        print("NO")
+    k+=1
